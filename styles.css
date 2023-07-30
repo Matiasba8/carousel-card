@@ -1,65 +1,86 @@
 * {
   box-sizing: border-box;
 }
-.center{
+.center {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.outer-card{
+.outer-card {
   background-color: red;
-  width: 1000px;
+  width: clamp(125px, 95vw, 1000px);
   height: 500px;
   border-radius: 20px;
   z-index: 0;
 
-  border: 6px dotted #241F21;
+  border: 6px dotted #241f21;
 
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
 }
-.inner-card{
-  background-color: #241F21;
+.inner-card {
+  background-color: #241f21;
   width: 970px;
   height: 450px;
   z-index: 1;
   display: flex;
-  
+
   border-radius: 20px;
 }
 
-.card-img{
+.card-img {
   width: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.card-content{
+.card-content {
   display: flex;
-  width: 75%;
+  justify-content: center;
+  align-items: center;
+  width: 110%;
 }
-.forward , .backwards{
+.forward,
+.backwards {
   cursor: pointer;
+  height: 100%;
 }
-.forward svg , .backwards svg{
+.forward svg,
+.backwards svg {
   width: 64px;
 }
 
-.forward svg{
+.forward svg {
   transform: rotate(180deg);
 }
-.card-description.active{
+.card-description.active {
   display: flex;
+  height: 100%;
+  overflow: scroll;
   justify-content: center;
   align-items: center;
   color: white;
 }
 
-.card-description.inactive{
+.card-description.inactive {
   display: none;
+}
+
+.card-img {
+  position: absolute;
+}
+
+.card-img > .logo {
+  left: 16px;
+  top: 16px;
+  position: absolute;
+}
+
+.logo {
+  width: 25%;
 }
